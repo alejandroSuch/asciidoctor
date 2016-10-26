@@ -1,0 +1,72 @@
+= Asciidoctor Docker Container. Based on Alpine
+
+== The environment
+
+This Docker container provides:
+
+* Asciidoctor 1.5.4
+* Asciidoctor PDF (alpha)
+* Asciidoctor EPUB3 (alpha)
+* Source highlighting using CodeRay or Pygments
+
+=== Usage
+
+Download this repo if you don't have any project yet:
+
+[source,console]
+----
+$ git clone https://github.com/alejandroSuch/asciidoctor-book-template.git bookname
+$ cd bookname
+----
+
+Build *HTML* version:
+
+[source,console]
+----
+docker run -it -w /opt/ -v $(pwd):/opt/ --rm alexsuch/asciidoctor asciidoctor -D output book.adoc
+----
+
+
+Build *PDF* version:
+
+[source,console]
+----
+docker run -it -w /opt/ -v $(pwd):/opt/ --rm alexsuch/asciidoctor asciidoctor-pdf -D output book.adoc
+----
+
+
+Build *EPUB* version:
+
+[source,console]
+----
+docker run -it -w /opt/ -v $(pwd):/opt/ --rm alexsuch/asciidoctor asciidoctor-epub3 -D output book.adoc
+----
+
+Build *Kindle* version:
+
+[source,console]
+----
+docker run -it -w /opt/ -v $(pwd):/opt/ --rm alexsuch/asciidoctor asciidoctor-epub3 -a ebook-format=kf8 -D output book.adoc
+----
+
+In all cases, result will be stored in `output` dir:
+
+[source,console]
+----
+$ tree
+.
+├── README.adoc
+├── book-sample.adoc
+├── book.adoc
+├── chapters
+│   └── cjk.adoc
+├── images
+│   ├── cover.png
+│   └── cover.svg
+└── output
+    ├── book-kf8.epub
+    ├── book.epub
+    ├── book.html
+    ├── book.mobi
+    └── book.pdf
+----
