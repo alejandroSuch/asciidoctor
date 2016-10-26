@@ -1,4 +1,5 @@
 FROM alpine:latest
+
 MAINTAINER Alejandro Such <alejandro.such@gmail.com>
 
 RUN apk update \
