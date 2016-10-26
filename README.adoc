@@ -1,4 +1,4 @@
-= Asciidoctor Docker Container. Based on Alpine
+= Asciidoctor Docker Container. Based on Alpine =
 
 == The environment
 
