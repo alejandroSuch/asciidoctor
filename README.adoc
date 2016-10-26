@@ -9,7 +9,7 @@ This Docker container provides:
 * Asciidoctor EPUB3 1.5.0.alpha.6
 * Source highlighting using CodeRay or Pygments
 
-=== Usage
+== Usage
 
 Download this repo if you don't have any project yet:
 
